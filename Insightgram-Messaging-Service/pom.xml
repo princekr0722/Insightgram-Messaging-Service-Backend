@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.practice.websocket</groupId>
-	<artifactId>Insightgram-Messaging-Service</artifactId>
+	<artifactId>Insightgram_Messaging_Service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>Insightgram_Messaging_Service</name>
 	<description>Insightgram Messaging Service Provider</description>
 	<properties>
 		<java.version>17</java.version>
