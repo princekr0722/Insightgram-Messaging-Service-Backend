@@ -27,6 +27,9 @@ public class SecurityConfiguration {
 	@Value("${allowed.backend.origin}")
 	private String allowedBackendOrigin;
 	
+	@Value("${allowed.api.gateway}")
+	private String allowedApiGateway;
+	
 	@Autowired
 	private JwtTokenGeneratorFilter jwtTokenGeneratorFilter;
 	
@@ -86,7 +89,7 @@ public class SecurityConfiguration {
 		corsConfigurationBackend.setMaxAge((long) 0);
 		
 		CorsConfiguration corsConfigurationAll = new CorsConfiguration();
-		corsConfigurationAll.setAllowedOrigins(Arrays.asList(allowedBackendOrigin, allowedFrontendOrigin));
+		corsConfigurationAll.setAllowedOrigins(Arrays.asList(allowedBackendOrigin, allowedFrontendOrigin, allowedApiGateway));
 		corsConfigurationAll.setAllowedHeaders(Arrays.asList("*"));
 		corsConfigurationAll.setAllowedMethods(Arrays.asList("*"));
 		corsConfigurationAll.setExposedHeaders(Arrays.asList("*"));

@@ -14,15 +14,18 @@ public class WebsocketConfiguration implements WebSocketMessageBrokerConfigurer 
 	@Value("${allowed.frontend.origin}")
 	private String allowedFrontendOrigin;
 	
+	@Value("${allowed.api.gateway}")
+	private String allowedApiGateway;
+	
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry
         .addEndpoint("/ws")
-        .setAllowedOrigins(allowedFrontendOrigin)
+        .setAllowedOrigins(allowedFrontendOrigin, allowedApiGateway)
         .withSockJS();
         
         registry.addEndpoint("/queue/user")
-        .setAllowedOrigins(allowedFrontendOrigin)
+        .setAllowedOrigins(allowedFrontendOrigin, allowedApiGateway)
         .withSockJS();
     }
     
